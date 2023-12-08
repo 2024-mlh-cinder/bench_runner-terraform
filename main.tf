@@ -32,7 +32,8 @@ resource "aws_instance" "bench_runner" {
       tar xzf ./actions-runner-linux-x64-2.311.0.tar.gz
       rm -f ./actions-runner-linux-x64-2.311.0.tar.gz
 
-      ./config.sh --url https://github.com/2024-mlh-cinder/bench_runner-results --token "${var.register_token}" --runnergroup "Default" --name "benchrunner" --labels "self-hosted,Linux,X64" --work "_work"
+      ./config.sh --url https://github.com/2024-mlh-cinder/bench_runner-results --token "${var.register_token}" --runnergroup "Default" --name "cinder-benchmarking-aws" --labels "self-hosted,Linux,X64" --work "_work"
+      ./run.sh
     EOF2
   EOF
 
