@@ -33,8 +33,14 @@ resource "aws_instance" "bench_runner" {
       rm -f ./actions-runner-linux-x64-2.311.0.tar.gz
 
       ./config.sh --url https://github.com/2024-mlh-cinder/bench_runner-results --token "${var.register_token}" --runnergroup "Default" --name "cinder-benchmarking-aws" --labels "self-hosted,Linux,X64" --work "_work"
-      ./run.sh
     EOF2
+
+    cd ~ec2-user
+    sudo ./svc.sh install
+    sudo ./svc.sh start
+
+    sudo modprobe msr
+    sudo reboot
   EOF
 
   tags = {
