@@ -25,7 +25,7 @@ resource "aws_instance" "bench_runner" {
    sudo hostnamectl set-hostname cinder-benchmarking-aws
    sudo dnf install -y lttng-ust openssl-libs krb5-libs zlib libicu
 
-   su ec2-user
+   sudo su ec2-user
    cd ~
 
    mkdir actions-runner && cd actions-runner
