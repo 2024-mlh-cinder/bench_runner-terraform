@@ -35,7 +35,7 @@ resource "aws_instance" "bench_runner" {
       ./config.sh --url https://github.com/2024-mlh-cinder/bench_runner-results --token "${var.register_token}" --runnergroup "Default" --name "cinder-benchmarking-aws" --labels "self-hosted,Linux,X64" --work "_work"
     EOF2
 
-    cd ~ec2-user
+    cd ~ec2-user/actions-runner
     sudo ./svc.sh install
     sudo ./svc.sh start
 
