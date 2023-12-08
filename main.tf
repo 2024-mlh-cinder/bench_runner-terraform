@@ -38,9 +38,6 @@ resource "aws_instance" "bench_runner" {
     cd ~ec2-user/actions-runner
     sudo ./svc.sh install
     sudo ./svc.sh start
-
-    sudo modprobe msr
-    sudo reboot
   EOF
 
   tags = {
