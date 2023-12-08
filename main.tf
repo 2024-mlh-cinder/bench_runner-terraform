@@ -26,7 +26,7 @@ resource "aws_instance" "bench_runner" {
    sudo dnf install -y lttng-ust openssl-libs krb5-libs zlib libicu
 
    sudo su ec2-user
-   cd ~
+   cd ~ec2-user
 
    mkdir actions-runner && cd actions-runner
    curl -o actions-runner-linux-x64-2.311.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.311.0/actions-runner-linux-x64-2.311.0.tar.gz 2>&1 | tee curl-logs.txt
